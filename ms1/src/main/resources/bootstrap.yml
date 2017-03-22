@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ms1
+  cloud:
+    services:
+      registrationMethod: route
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:}
+
+security:
+  basic:
+    enabled: false
+management:
+  security:
+    enabled: false

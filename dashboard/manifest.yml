@@ -1,0 +1,15 @@
+---
+memory: 1G
+instances: 1
+env:
+  JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {memory_heuristics: {heap: 70, metaspace: 10, stack: 10, native: 10}}]'
+applications:
+- name: msdashboard-test-pws-dashboard
+  path: target/dashboard-1.0.0-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack
+  timeout: 120
+  services:
+  - service-registry
+  env:
+    SPRING_PROFILES_ACTIVE : cloud
+    JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {memory_heuristics: {heap: 70, metaspace: 10, stack: 10, native: 10}}]'
